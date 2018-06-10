@@ -1,0 +1,18 @@
+<div ng-init="getRequest()">
+ 
+<div class="row" ng-repeat="entry in entries">
+    
+     <h3 class="col-md-4">
+       {{entry.name}}
+     </h3>
+      <p class="col-md-4">
+       {{entry.description}}
+     </p>
+      <div class="col-md-4" ng-repeat="image in entry.imgs">
+       {{image.url}}
+     </div>
+
+  </div>
+
+
+</div>
