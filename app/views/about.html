@@ -3,19 +3,20 @@
     <div class="page-header"><h1>Create Post</h1></div>
     <!-- FORM -->
     <form name="userForm" ng-submit="submitForm()">
-    <div class="form-group">
-        <label>Name</label>
-        <input type="text" name="name" class="form-control" ng-model="name">
-    </div>
-    <div class="form-group">
-        <label>Description</label>
-        <input type="text" name="description" class="form-control" ng-model="description">
-    </div>
-    <div class="form-group">
-     <label>Image</label>
-     <input type="text" name="img" class="form-control" ng-model="image">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+	    <div class="form-group">
+	        <label>Name</label>
+	        <input type="text" value="{{name}}" name="name" class="form-control" ng-model="name">
+	    </div>
+	    <div class="form-group">
+	        <label>Description</label>
+	        <input type="text" value="{{description}}" name="description" class="form-control" ng-model="description">
+	    </div>
+	    <div class="form-group">
+	     	<label>Image URL</label>
+	     	<input type="text" value="{{image}}" name="img" class="form-control" ng-model="image">
+	    </div>
+	    <button type="submit" class="btn btn-primary">Save</button>
+		<button class="btn btn-danger" ng-click="deleteEntry()">Delete</button>
     </form>
 </div>
 </div>
