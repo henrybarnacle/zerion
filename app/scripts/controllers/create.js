@@ -1,7 +1,7 @@
 'use strict';
 
 
- angular.module('routeApp').controller('AboutCtrl', function($rootScope, $scope, $http, $routeParams) {
+ angular.module('routeApp').controller('CreateCtrl', function($window, $rootScope, $scope, $http, $routeParams) {
 
 
  
@@ -28,7 +28,7 @@
         		 }
 			}).then(function successCallback(response) {
 			   console.log(response);
-			   
+			   $window.location.href = '/#/';
 			  }, function errorCallback(response) {
 			    // called asynchronously if an error occurs
 			    // or server returns response with an error status.
@@ -56,7 +56,7 @@
         		 }
 			}).then(function successCallback(response) {
 			   console.log(response);
-			   
+			    $window.location.href = '/#/';
 			  }, function errorCallback(response) {
 			    // called asynchronously if an error occurs
 			    // or server returns response with an error status.
@@ -65,12 +65,12 @@
 			}
 		}
 
-		$rootScope.sampleFunction = function( response ){
+		$rootScope.sampleFunction = function(response){
  		console.log(response);
  			   $scope.name = response.data.name;
 			   $scope.description = response.data.description;
 			   $scope.image = response.data.imgs[0].url;
- 	}
+ 		}
 
 		$scope.deleteEntry = function () {
 				$http({
@@ -83,7 +83,7 @@
 				         }
 							}).then(function successCallback(response) {
 			   console.log(response);
-			   
+ 				$window.location.href = '/#/';			   
 			  }, function errorCallback(response) {
 			    // called asynchronously if an error occurs
 			    // or server returns response with an error status.
