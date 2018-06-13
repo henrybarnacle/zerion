@@ -1,19 +1,21 @@
 
-<md-toolbar>Entries</md-toolbar>
+<div class="md-display-3">Entries</div>
+<br>
 <div ng-init="getEntries()">
  
 <div class="row" >
     <div class="col-md-4" ng-repeat="entry in entries" ng-click="getEntry(entry._id)">
       <a href="#/create/{{entry._id}}">
-       <h3>
+       <div class="md-display-1">
          {{entry.name}}
-         
-       </h3>
-        <p>
+       </div>
+       
+        <div class="md-subhead">
          {{entry.description}}
-       </p>
+       </div>
+
         <div ng-repeat="image in entry.imgs">
-         {{image.url}}
+          <img ng-src="{{image.url}}" alt="Description" height="200px" width="200px"/>
        </div>
 
    </div>
