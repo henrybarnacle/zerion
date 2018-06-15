@@ -10,49 +10,30 @@
 
 <md-toolbar>
           <div class="md-toolbar-tools">
-            
             <span class="fill-space"></span>
               <ANY>
-                
                   <a href="#" id="grid" class="icons"><span class="glyphicon glyphicon-th"></span>Grid</a>
-             
-              
                   <a href="#" id="list" ><span class="glyphicon glyphicon-th-list"></span>List</a> 
-             
             </ANY>
           </div>
 </md-toolbar>
 
-
-
-
-
-
-
 <br>
+
 <div ng-init="getEntries()">
- 
+
 <div layout="row" id="products">
-
-
     <div class="item col-md-4" ng-repeat="entry in entries" ng-click="getEntry(entry._id)">
       <a href="#/create/{{entry._id}}">
        <div ng-repeat="image in entry.imgs">
           <img ng-src="{{image.url}}" alt="Description" height="200px" width="200px"/>
-       </div></a>
+       </div>
        <div class="md-display-1">
          {{entry.name}}
-       </div>
-       
+       </div> 
         <div class="md-subhead">
          {{entry.description}}
-       </div>
-
-
-
+       </div></a>
    </div>
-
   </div>
-
-
 </div>
