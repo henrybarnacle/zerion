@@ -1,11 +1,45 @@
 
-<div class="md-display-3">Entries</div>
+<div class="md-display-3 ">Entries</div>
+ 
+
+        <!-- These two buttons switch the layout variable,
+             which causes the correct UL to be shown.   <button mat-raised-button color="primary">The</button>
+  <button mat-raised-button color="accent">Buttons</button>-->
+
+                          
+
+<md-toolbar>
+          <div class="md-toolbar-tools">
+            
+            <span class="fill-space"></span>
+              <ANY>
+                
+                  <a href="#" id="grid" class="icons"><span class="glyphicon glyphicon-th"></span>Grid</a>
+             
+              
+                  <a href="#" id="list" ><span class="glyphicon glyphicon-th-list"></span>List</a> 
+             
+            </ANY>
+          </div>
+</md-toolbar>
+
+
+
+
+
+
+
 <br>
 <div ng-init="getEntries()">
  
-<div class="row" >
-    <div class="col-md-4" ng-repeat="entry in entries" ng-click="getEntry(entry._id)">
+<div layout="row" id="products">
+
+
+    <div class="item col-md-4" ng-repeat="entry in entries" ng-click="getEntry(entry._id)">
       <a href="#/create/{{entry._id}}">
+       <div ng-repeat="image in entry.imgs">
+          <img ng-src="{{image.url}}" alt="Description" height="200px" width="200px"/>
+       </div></a>
        <div class="md-display-1">
          {{entry.name}}
        </div>
@@ -14,9 +48,7 @@
          {{entry.description}}
        </div>
 
-        <div ng-repeat="image in entry.imgs">
-          <img ng-src="{{image.url}}" alt="Description" height="200px" width="200px"/>
-       </div>
+
 
    </div>
 

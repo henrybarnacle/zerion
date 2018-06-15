@@ -7,6 +7,10 @@ angular.module('routeApp').
 controller('homeCtrl', function($rootScope, $scope, $http) {
     this.title = "This is the homepage";
 
+$(document).ready(function() {
+    $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
+    $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
+});
     // GET ALL ENTRIES FOR MAIN PAGE ///
 
     $scope.getEntries = function() {
